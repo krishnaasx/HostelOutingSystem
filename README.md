@@ -1,0 +1,1 @@
+FirstCommit - Creation of entities(Student Profile), creation and migration of database with the help of entityframeworkcore and dotnet ef services , Controller(ProfileController) that retrives the data from end points with HttpGet. 19-03-2024
