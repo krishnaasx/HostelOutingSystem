@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240318191108_InitialCreate")]
+    [Migration("20240327182727_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -22,6 +22,12 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.StudentProfiles", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DepartmentAndCourse")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

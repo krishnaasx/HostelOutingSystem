@@ -14,7 +14,7 @@ namespace API.Controllers{
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentProfiles>>> GetProfiles(){
-            var profiles = await _context.Students.ToListAsync();
+            var profiles = await _context.Students.OrderBy(s => s.RoomNumber).ToListAsync();
             return profiles;
         }
 
