@@ -6,9 +6,9 @@ namespace API.Controllers{
 
     [ApiController]
     [Route("api/[controller]")] // api/profile
-    public class ProfileController : ControllerBase{
+    public class ProfilesController : ControllerBase{
         private readonly DataContext _context;
-        public ProfileController(DataContext context){
+        public ProfilesController(DataContext context){
             _context = context;
         }
 
