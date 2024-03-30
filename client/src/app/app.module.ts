@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentMatTableComponentComponent } from "./student-mat-table-component/student-mat-table-component.component";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
