@@ -8,5 +8,7 @@ namespace API.Data{
         }
 
         public DbSet<StudentProfiles> Students { get; set; }
+        public DbSet<ForStudent> forStudents { get; set; }
+        public DbSet<ForWardan> forWardans { get; set; }
     }
 }

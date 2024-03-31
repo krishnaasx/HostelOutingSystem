@@ -2,11 +2,11 @@ using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 namespace API.Controllers{
 
-    [ApiController]
-    [Route("api/[controller]")] // api/profile
-    public class ProfilesController : ControllerBase{
+
+    public class ProfilesController : BaseApiController{
         private readonly DataContext _context;
         public ProfilesController(DataContext context){
             _context = context;
