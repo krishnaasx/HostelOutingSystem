@@ -10,9 +10,13 @@ ThirdCommit - Created frontend with angular framework, added cors, origins , cre
 FourthCommit - Done some modification like added ngx-bootstrap and changed the method calling from AppComponent instead of StudentMatTableComponent and added fonts
 <br>
 <br>
+<<<<<<< HEAD
 FifthCommit -  Added register and login end-points for students and wardans and created Dto for both
 <br>
 <br>
 SixthCommit - Added JSON web token services for authentication and authorization.
 <br>
 <br>
+=======
+FifthCommit - Added register and login end-points for students and wardans and created Dto for both 
+>>>>>>> 31f9f83edda34cf8713997197fd7495584a75089
