@@ -16,6 +16,6 @@ FifthCommit -  Added register and login end-points for students and wardans and 
 SixthCommit - Added JSON web token services for authentication and authorization.
 <br>
 <br>
-SeventhCommit - Did client side login and made it persistent
+SeventhCommit - Did client side login and made it persistent and routed the components
 <br>
 <br>
