@@ -1,12 +1,9 @@
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-    rel="stylesheet"
-  />
-</head>
-
-<h4 style="font-family: Merriweather, serif" class="center-heading"> <b>{{ title }}</b> </h4>
-
-<app-student-mat-table-component> </app-student-mat-table-component>
+<div class="container">
+  <h1 class="title">Welcome to Hostel Outing App</h1>
+  <div class="button-container">
+    <button class="login-button student" (click)="goToStudentLogin()" >Student Login</button>
+    <button class="login-button warden" (click)="goToWardenLogin()">Warden Login</button>
+    <button class="back-button" (click)="goBack()">Back</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

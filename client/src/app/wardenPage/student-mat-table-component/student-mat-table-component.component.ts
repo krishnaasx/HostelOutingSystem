@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-student-mat-table-component',
@@ -7,12 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-mat-table-component.component.css']
 })
 
-export class StudentMatTableComponentComponent {
+export class StudentMatTableComponentComponent implements OnInit{
 
   studentProfiles : any;
   displayColumns : any [] = ['roomNumber','name','id','phoneNumber','parentPhoneNumber','address','departmentAndCourse'];
+
+  @ViewChild(StudentMatTableComponentComponent , { static:true })
+  private studentComponent !: StudentMatTableComponentComponent; //'!' (definite assignment assertion operator)
+
   constructor(private http:HttpClient){
 
+  }
+
+  ngOnInit(): void {
+    this.studentComponent.getMethod();
   }
 
   public getMethod(){
