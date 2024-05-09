@@ -19,3 +19,4 @@ SixthCommit - Added JSON web token services for authentication and authorization
 SeventhCommit - Did client side login and made it persistent and routed the components
 <br>
 <br>
+EighthCommit - Added the outing request endpoints(get - post) - ( seeing - requesting)
