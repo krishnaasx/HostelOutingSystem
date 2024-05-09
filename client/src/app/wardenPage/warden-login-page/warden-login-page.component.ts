@@ -1,34 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { WardenAccountService } from "../../_services/warden-account.service";
-import { Observable, of } from "rxjs";
-import { Warden } from "src/app/_models/warden";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
+import { WardenAccountService } from "src/app/_services/warden-account.service";
 
 @Component({
   selector: 'app-warden-login-page',
   templateUrl: './warden-login-page.component.html',
   styleUrls: ['./warden-login-page.component.css']
 })
-export class WardenLoginPageComponent implements OnInit {
-  
+export class WardenLoginPageComponent implements OnInit{
+
   model : any = {};
-  currentWarden$: Observable<Warden | null> = of(null);
-  constructor(private router: Router,private wardenAccountService: WardenAccountService) {}
-  ngOnInit(): void {
-      this.currentWarden$ = this.wardenAccountService.currentWarden$;
+  constructor(private wardenAccountService : WardenAccountService,private router:Router, private toastr:ToastrService) {}
+  ngOnInit(): void{
+
   }
 
   login(){
     this.wardenAccountService.login(this.model).subscribe({
-      next: response => {
-        console.log(response);
-        this.router.navigate(['/requests']);
-      },
-      error: error => console.log(error)
+      next: () => this.router.navigate(['/optionsForWarden']),
+      error: error => this.toastr.error(error.error)
     })
-  }
-
-  logout(){
-    this.wardenAccountService.logout();
   }
 }

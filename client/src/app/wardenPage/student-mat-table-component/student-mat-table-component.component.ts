@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { WardenLoginPageComponent } from "../warden-login-page/warden-login-page.component";
 
 @Component({
   selector: 'app-student-mat-table-component',
@@ -12,15 +13,10 @@ export class StudentMatTableComponentComponent implements OnInit{
   studentProfiles : any;
   displayColumns : any [] = ['roomNumber','name','id','phoneNumber','parentPhoneNumber','address','departmentAndCourse'];
 
-  @ViewChild(StudentMatTableComponentComponent , { static:true })
-  private studentComponent !: StudentMatTableComponentComponent; //'!' (definite assignment assertion operator)
+  constructor(private http:HttpClient){ }
 
-  constructor(private http:HttpClient){
-
-  }
-
-  ngOnInit(): void {
-    this.studentComponent.getMethod();
+  ngOnInit(){
+    this.getMethod();
   }
 
   public getMethod(){

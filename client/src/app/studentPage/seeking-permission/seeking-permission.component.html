@@ -1,37 +1,91 @@
 <div class="container-fluid">
     <h2 class="heading">Request For Outing Permission</h2>
-    <form class="form" #outingForm="ngForm">
+    <form class="form" #outingForm="ngForm" (ngSubmit)="request()" autocomplete="off">
+
+
       <div class="form-group">
-        <label for="date">StudentID</label>
-        <input type="text" id="date" name="StudentId" class="form-control" required>
+        <label for="Student ID">StudentID</label>
+        <input type="text" 
+        name="id" 
+        class="form-control"
+        [(ngModel)]="model.id"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" class="form-control" required>
+        <label for="Date">Date:</label>
+        <input type="text" 
+        name="date" 
+        class="form-control" 
+        [(ngModel)]="model.date"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="form-control" required>
+        <label for="Day">Day:</label>
+        <input type="text" 
+        name="day" 
+        class="form-control" 
+        [(ngModel)]="model.day"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="name">Room Number:</label>
-        <input type="text" id="name" name="roomNumber" class="form-control" required>
+        <label for="Name">Name:</label>
+        <input type="text" 
+        name="name" 
+        class="form-control" 
+        [(ngModel)]="model.name"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
+        <label for="Room Number">Room Number:</label>
+        <input type="text" 
+        name="roomNumber" 
+        class="form-control" 
+        [(ngModel)]="model.roomNumber"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" name="destination" class="form-control" required>
+        <label for="Destination">Destination:</label>
+        <input type="text" 
+        name="destination" 
+        class="form-control"
+        [(ngModel)]="model.destination"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="currentTime">Current Time:</label>
-        <input type="time" id="currentTime" name="currentTime" class="form-control" required>
+        <label for="Current Time">Current Time:</label>
+        <input type="text" 
+        name="currentTime" 
+        class="form-control"
+        [(ngModel)]="model.currentTime"
+        required
+        >
       </div>
+
       <div class="form-group">
-        <label for="inTime">In Time:</label>
-        <input type="time" id="inTime" name="inTime" class="form-control" required>
+        <label for="In Time">In Time:</label>
+        <input type="text" 
+        name="inTime" 
+        class="form-control"
+        [(ngModel)]="model.inTime"
+        required>
+      </div>
+
+      <div class="form-group">
+        <label for="Permission">Do I have the permission?</label>
+        <h6>YES</h6>
+        <h6>NO</h6>
       </div>
       
       <button type="submit" class="btn-submit">Submit</button>

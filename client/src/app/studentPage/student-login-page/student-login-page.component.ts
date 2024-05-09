@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentAccountService } from "../../_services/student-account.service";
 import { Router } from "@angular/router";
-import { Observable, of } from "rxjs";
-import { Student } from "src/app/_models/student";
-
+import { ToastrService } from "ngx-toastr";
+import { StudentAccountService } from "src/app/_services/student-account.service";
 
 @Component({
   selector: 'app-student-login-page',
@@ -11,29 +9,19 @@ import { Student } from "src/app/_models/student";
   styleUrls: ['./student-login-page.component.css']
 })
 
-export class StudentLoginPageComponent implements OnInit {
+export class StudentLoginPageComponent implements OnInit{
 
   model : any = {};
-  currentStudent$: Observable<Student | null> = of(null);
-  constructor(private router: Router,private studentAccountService: StudentAccountService) {}
-  ngOnInit(): void {
-      this.currentStudent$ = this.studentAccountService.currentStudent$;
+  loggedIn = false;
+  constructor(private studentAccountService : StudentAccountService,private router:Router, private toastr:ToastrService) {}
+  ngOnInit(): void{
+
   }
 
   login(){
     this.studentAccountService.login(this.model).subscribe({
-      next: response => {
-        console.log(response);
-        this.router.navigate(['/seeking-permission']);
-      },
-      error: error => console.log(error)
+      next:() => this.router.navigate(['/seeking-permission']),
+      error: error => this.toastr.error(error.error)
     })
   }
-
-  logout(){
-    this.studentAccountService.logout();
-  }
-
-
-
 }

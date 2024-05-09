@@ -1,27 +1,26 @@
 <div class="login-container">
-    <h2>Warden Login</h2>
-    <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
-      <div class="form-group">
-        <label for="wardanId">Warden ID:</label>
-        <input
-          type="text"
-          id="wardanId"
-          name="wardanId"
-          [(ngModel)]="model.wardanId"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          [(ngModel)]="model.password"
-          required
-        />
-      </div>
-      <button class="btn btn-outline-success" type="submit">Login</button>
-    </form>
-  </div>
-  
+  <h2>Warden Login</h2>
+  <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
+    <div class="form-group">
+      <label for="wardanId">Warden ID:</label>
+      <input
+        type="text"
+        id="wardanId"
+        name="wardanId"
+        [(ngModel)]="model.wardanId"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        required
+      />
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-<div class="login-container" *ngIf="currentStudent$ | async">
+<div class="login-container">
   <h2>Student Login</h2>
   <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
     <div class="form-group">
@@ -21,6 +21,6 @@
         required
       />
     </div>
-    <button class="btn btn-outline-success" type="submit" >Login</button>
+    <button class="btn btn-primary" type="submit" >Login</button>
   </form>
 </div>
