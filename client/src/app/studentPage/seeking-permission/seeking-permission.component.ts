@@ -6,6 +6,7 @@ import { StudentAccountService } from "src/app/_services/student-account.service
   templateUrl: './seeking-permission.component.html',
   styleUrls: ['./seeking-permission.component.css']
 })
+
 export class SeekingPermissionComponent implements OnInit{
 
   model : any = {}

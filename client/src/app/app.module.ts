@@ -14,6 +14,7 @@ import { RequestsComponent } from './wardenPage/requests/requests.component';
 import { OptionsComponent } from './options/options.component';
 import { OptionsForWardenComponent } from './wardenPage/options-for-warden/options-for-warden.component';
 import { ToastrModule } from "ngx-toastr";
+import { SeePermissionComponent } from './studentPage/see-permission/see-permission.component'; 
 
 @NgModule({
   
@@ -25,7 +26,8 @@ import { ToastrModule } from "ngx-toastr";
     SeekingPermissionComponent,
     RequestsComponent,
     OptionsComponent,
-    OptionsForWardenComponent
+    OptionsForWardenComponent,
+    SeePermissionComponent
   ],
 
   imports: [

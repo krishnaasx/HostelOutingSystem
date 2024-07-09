@@ -9,6 +9,5 @@ namespace API.Entities{
         public string CurrentTime { get; set; }
         public string InTime { get; set; }
         public bool Status { get; set; }
-
     }
 }

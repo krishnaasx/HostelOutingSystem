@@ -56,9 +56,26 @@ namespace API.Controllers {
             };
         }
 
-
         private async Task<bool> UserExists(string id){
             return await _context.forWardans.AnyAsync(x => x.WardanId == id.ToLower());
+        }
+
+        [HttpPut("update/{id}")]
+        public async Task<ActionResult<RequestEntities>> UpdateEntityStatus(string id, [FromBody] UpdateStatusDto statusDto){
+
+            var req = await _context.requestEntities.FindAsync(id);
+            if(req == null) return BadRequest("Person not found!");
+
+            req.Status = statusDto.Status;
+            await _context.SaveChangesAsync();
+            return Ok(req);
+
+        }
+
+        [HttpGet("seeRequests/{id}")]
+        public async Task<ActionResult<RequestEntities>> SeeRequests(string id){
+            var see = await _context.requestEntities.FindAsync(id);
+            return see;
         }
         
     }
